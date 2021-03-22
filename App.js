@@ -1,21 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import CryptoCurContextProvider from './src/context/CryptoCurContext';
+import HomeStack from './src/routes/HomeStack';
 
-export default function App() {
+// Where the Context and Route folders are called
+export default App = () => {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <CryptoCurContextProvider>
+      <HomeStack />
+    </CryptoCurContextProvider>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
