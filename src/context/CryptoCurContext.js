@@ -30,8 +30,19 @@ const CryptoCurContextProvider = (props) => {
         getDataApi();
     }, []);
 
+    // Add a Crypto Currency to the Tracker Page if not already added
+    const AddCryptoItem = async (id) => {
+        try {
+            const selectCryptoItem = (cryptoItems.filter(cryptoItem => cryptoItem.id === id)[0])
+            const selectAddedItem = (addedCryptoItems.filter(addedCryptoItem => addedCryptoItem.id === id)[0])
+            selectCryptoItem !== selectAddedItem ? setAddedCryptoItems(addedCryptoItems => [...addedCryptoItems, selectCryptoItem]) : alert(selectAddedItem.name + ' ' + 'has already been added to your tracker')
+        } catch (error) {
+            console.error(error);
+        } 
+    };
+
     return (
-        <CryptoCurContext.Provider value={{refreshing, cryptoItems}}>
+        <CryptoCurContext.Provider value={{refreshing, cryptoItems, addedCryptoItems, AddCryptoItem}}>
             { props.children }
         </CryptoCurContext.Provider>
     )

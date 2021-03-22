@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, RefreshCon
 
 // Component building the list of all the Crypto Currencies available in the API using Context
 const CryptoCurList = () => {
-    const { cryptoItems, refreshing } = useContext(CryptoCurContext);
+    const { cryptoItems, refreshing, AddCryptoItem } = useContext(CryptoCurContext);
     
     return ( 
         <SafeAreaView>
@@ -15,7 +15,7 @@ const CryptoCurList = () => {
                 enableEmptySections={true}
                 renderItem={({ item, index }) => (
 // Adding a selected Crypto Currency to "My Tracker" page
-                    <TouchableOpacity style={styles.list} key={index}>
+                    <TouchableOpacity style={styles.list} key={index} onPress={() => AddCryptoItem(item.id)}>
                         <Text style={styles.text}>{item.symbol}</Text>
                         <Text style={styles.text}>{item.name}</Text>
                         <Text style={styles.text}>{(item.priceUsd).toFixed(2)} USD</Text>
