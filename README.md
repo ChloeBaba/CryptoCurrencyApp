@@ -1,4 +1,3 @@
-==============================================================
 Crypto Currency App functionalities:
 
 1/ Homepage
