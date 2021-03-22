@@ -50,8 +50,14 @@ const CryptoCurContextProvider = (props) => {
         }
     };
 
+    // Refresh Crypto Currency Data on Home Page
+    const onRefreshCryptoItems = () => {
+        setCryptoItems([]);
+        getDataApi();
+    };
+
     return (
-        <CryptoCurContext.Provider value={{refreshing, cryptoItems, addedCryptoItems, AddCryptoItem, DeleteAddedCryptoItem}}>
+        <CryptoCurContext.Provider value={{refreshing, cryptoItems, addedCryptoItems, AddCryptoItem, DeleteAddedCryptoItem, onRefreshCryptoItems}}>
             { props.children }
         </CryptoCurContext.Provider>
     )

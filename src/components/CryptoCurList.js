@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, RefreshCon
 
 // Component building the list of all the Crypto Currencies available in the API using Context
 const CryptoCurList = () => {
-    const { cryptoItems, refreshing, AddCryptoItem } = useContext(CryptoCurContext);
+    const { cryptoItems, refreshing, AddCryptoItem, onRefreshCryptoItems } = useContext(CryptoCurContext);
     
     return ( 
         <SafeAreaView>
@@ -23,6 +23,10 @@ const CryptoCurList = () => {
                         <Text style={styles.plusText}>+</Text>
                     </TouchableOpacity>  
                 )}
+// Refresh the Crypto Currencies values on swipe down
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefreshCryptoItems}/>
+                }
                 />
                 }
             </View>
