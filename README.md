@@ -1,3 +1,22 @@
+==============================================================
+Crypto Currency App functionalities:
+
+1/ Homepage
+
+See a list of all the crypto currencies with requested values (name, price USD, change price over the last 24h)
+Each crypto currency can be added to the tracker page (if not already)
+Data is refreshing on swipe down
+2/ Tracker page
+
+See all the added crypto currencies
+Remove crypto currencies from the personalised list
+
+3/ Navigation
+
+Button is implemented on Homepage to access Tracker page
+
+==============================================================
+
 # React-native challenge
 
 Our React-native coding challenge is a simple "Crypto Tracker". Users should be able to add new cryptocurrencies, visualize the current price and the change in price in % for the last 24 hours, and also be able to remove a cryptocurrency from the app.
