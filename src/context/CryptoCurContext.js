@@ -41,8 +41,17 @@ const CryptoCurContextProvider = (props) => {
         } 
     };
 
+    // Delete a Crypto Currency on Tracker Page
+    const DeleteAddedCryptoItem = async (id) => {
+        try {
+            setAddedCryptoItems(addedCryptoItems.filter(addedCryptoItem => addedCryptoItem.id !== id))
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
-        <CryptoCurContext.Provider value={{refreshing, cryptoItems, addedCryptoItems, AddCryptoItem}}>
+        <CryptoCurContext.Provider value={{refreshing, cryptoItems, addedCryptoItems, AddCryptoItem, DeleteAddedCryptoItem}}>
             { props.children }
         </CryptoCurContext.Provider>
     )

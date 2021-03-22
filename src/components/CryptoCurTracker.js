@@ -5,7 +5,7 @@ import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, FlatList } from
 // Component building the selected Crypto Currencies List through the addedCryptoItems useState in context
 const CryptoCurTracker = () => {
   
-  const { addedCryptoItems } = useContext(CryptoCurContext);
+  const { addedCryptoItems, DeleteAddedCryptoItem } = useContext(CryptoCurContext);
   
   return (
     <SafeAreaView>
@@ -15,7 +15,7 @@ const CryptoCurTracker = () => {
               enableEmptySections={true}
               renderItem={({ item, index }) => (
 // Removing a selected Crypto Currency from 'My Tracker' page
-                    <TouchableOpacity style={styles.list} key={index}>
+                    <TouchableOpacity style={styles.list} key={index} onPress={() => DeleteAddedCryptoItem(item.id)}>
                         <Text style={styles.text}>{item.symbol}</Text>
                         <Text style={styles.text}>{item.name}</Text>
                         <Text style={styles.text}>{(item.priceUsd).toFixed(2)} USD</Text>
