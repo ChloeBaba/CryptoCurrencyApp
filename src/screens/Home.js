@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, Text, View, Button } from 'react-native';
+import CryptoCurList from '../components/CryptoCurList';
 
 export default function Home({ navigation }) {
 
@@ -13,7 +14,7 @@ export default function Home({ navigation }) {
                 <Button title='My Tracker >' onPress={PressHandler} />
             </View>
             <View>
-                <Text>Home page</Text>
+                <CryptoCurList />
             </View>
         </SafeAreaView>
     );
